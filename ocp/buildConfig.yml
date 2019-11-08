@@ -1,3 +1,4 @@
+# Not actually used, a OCP template was used
 apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
