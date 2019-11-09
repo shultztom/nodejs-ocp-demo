@@ -1,13 +1,18 @@
 # Node.js Example on OCP
 
-Link: http://nodejs-ocp-demo-nodejs-ocp-demo.apps.us-east-2.starter.openshift-online.com/
+Link: https://nodejs-ocp-demo-nodejs-ocp-demo.apps.us-east-2.starter.openshift-online.com/
 
 Instructions:
 
 1. Sign up for free Starter Plan [here](https://www.openshift.com/products/pricing/)
-2. Install the OCP CLI [here](https://docs.openshift.com/container-platform/3.4/cli_reference/get_started_cli.html)
-3. After your space provisions, create a project with the CLI or online console
+2. After your space provisions, create a project the online console
+3. Create a Dockerfile
+4. Either build the Docker image locally or link GitHub to Docker Hub and build everytime you push to a branch
+5. On the OCP Console, Click Add -> Deploy Image
+6. Select your image, (tks23/nodejs-ocp-demo)
+7. A service which binds port 8080 to OCP's router should be automatically created
+8. Map a route
+   - I use TLS and redirect unsecure requests to HTTPS
+   - https://nodejs-ocp-demo-nodejs-ocp-demo.apps.us-east-2.starter.openshift-online.com/
 
-`oc project nodejs-ocp-demo`
-
-4. Select your project and select the Node.js template
+Updating:
