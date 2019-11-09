@@ -1,0 +1,1 @@
+docker push tks23/nodejs-ocp-demo:latest
