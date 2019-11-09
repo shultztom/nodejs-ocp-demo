@@ -1,6 +1,6 @@
 {
   "name": "nodejs-ocp-demo",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "scripts": {
     "start": "node ./bin/www",
     "start:dev": "nodemon ./bin/www",
