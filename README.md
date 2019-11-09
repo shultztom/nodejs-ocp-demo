@@ -16,3 +16,7 @@ Instructions:
    - https://nodejs-ocp-demo-nodejs-ocp-demo.apps.us-east-2.starter.openshift-online.com/
 
 Updating:
+
+1. Update the image in Docker Hub
+2. Sync with Openshift
+   `oc import-image nodejs-ocp-demo`
