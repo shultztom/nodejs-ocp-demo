@@ -19,4 +19,9 @@ Updating:
 
 1. Update the image in Docker Hub
 2. Sync with Openshift
+
    `oc import-image nodejs-ocp-demo`
+
+3. Automate the sync process with
+
+   `oc import-image nodejs-ocp-demo --scheduled=true`
