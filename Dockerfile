@@ -6,7 +6,7 @@ WORKDIR /app
 # Install app dependencies
 COPY package.json yarn.lock ./
 
-RUN yarn install
+RUN yarn install --production
 # If you are building your code for production
 # RUN npm ci --only=production
 
@@ -14,4 +14,5 @@ RUN yarn install
 COPY . .
 
 EXPOSE 8080
+USER node
 CMD [ "yarn", "start" ]
