@@ -39,32 +39,6 @@ node('linux'){
         sh "./dockerScripts/push.sh"
     }
     
-    //  Add OC CLI
-    stage('Add OC CLI') {
-        def dir = pwd()
-        sh "cp ~/jenkins/tools/oc-cli/oc ${dir}/"
-        sh "./oc"
-    }
-    
-    // OC Login
-    stage('OC Login') {
-        withCredentials([usernamePassword(credentialsId: 'oc-cli-server-token', usernameVariable: 'SERVER', passwordVariable: 'TOKEN')]) {
-            sh "./oc login --token=${TOKEN} --server=${SERVER} -n nodejs-ocp-demo"
-        }
-    }
-
-     // OC Project
-    stage('OC Project') {
-        withCredentials([usernamePassword(credentialsId: 'oc-cli-server-token', usernameVariable: 'SERVER', passwordVariable: 'TOKEN')]) {
-            sh "./oc project nodejs-ocp-demo"
-        }
-    }
-
-    // OC Import Image
-    stage('OC Import Image') { 
-        sh "./oc import-image nodejs-ocp-demo --confirm"
-    }
-
     // OC Logout
     stage('OC Logout') { 
         sh "./oc logout"

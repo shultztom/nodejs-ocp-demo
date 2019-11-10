@@ -1,6 +1,19 @@
 #!/usr/bin/env groovy
 
 node('linux'){
+    // Clean Up
+    stage('Clean Up') {
+        try {
+            sh "rm -rf *"
+        } catch (Exception e) {}
+        try {
+            sh "rm .env .gitignore .npmrc .nvmrc"
+        } catch (Exception e) {}
+        try {
+            sh "rm -rf .git"
+        } catch (Exception e) {}
+    }
+
     //  Add OC CLI
     stage('Add OC CLI') {
         def dir = pwd()
@@ -28,5 +41,18 @@ node('linux'){
     // OC Logout
     stage('OC Logout') { 
         sh "./oc logout"
+    }
+
+    // Clean Up
+    stage('Clean Up') {
+        try {
+            sh "rm -rf *"
+        } catch (Exception e) {}
+        try {
+            sh "rm .env .gitignore .npmrc .nvmrc"
+        } catch (Exception e) {}
+        try {
+            sh "rm -rf .git"
+        } catch (Exception e) {}
     }
 }
