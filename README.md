@@ -34,7 +34,7 @@ Updating:
 
 Link: http://nodejs-ocp-demo-nodejs-ocp-demo.192.168.1.45.nip.io/
 
-Uses oc cli and build method
+Uses oc cli and Docker build method
 
 Instructions:
 
