@@ -58,6 +58,13 @@ node('linux'){
         }
     }
 
+     // OC Project
+    stage('OC Project') {
+        withCredentials([usernamePassword(credentialsId: 'oc-cli-server-token', usernameVariable: 'SERVER', passwordVariable: 'TOKEN')]) {
+            sh "./oc project nodejs-ocp-demo"
+        }
+    }
+
     // OC Import Image
     stage('OC Import Image') { 
         sh "./oc import-image nodejs-ocp-demo"
