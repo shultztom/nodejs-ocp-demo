@@ -29,7 +29,7 @@ node('linux'){
     }
 
      // OC Project
-    stage('OC Start Build') {
+    stage('OC Project') {
         sh "./oc project nodejs-ocp-demo"
     }
 
