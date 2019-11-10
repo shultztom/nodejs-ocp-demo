@@ -45,7 +45,7 @@ node('linux'){
 
     // Docker Logout
     stage('Docker Logout') {
-        sh "docker Logout"
+        sh "docker logout"
     }
     // OC Login
     stage('OC Login') {
