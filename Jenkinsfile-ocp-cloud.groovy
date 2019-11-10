@@ -38,11 +38,6 @@ node('linux'){
     stage('Push') {
         sh "./dockerScripts/push.sh"
     }
-    
-    // OC Logout
-    stage('OC Logout') { 
-        sh "./oc logout"
-    }
 
     // Docker Logout
     stage('Docker Logout') {
