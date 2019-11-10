@@ -16,13 +16,6 @@ node('linux'){
         } catch (Exception e) {}
     }
 
-    //  Add OC CLI
-    stage('Add OC CLI') {
-        def occli = tool name: 'oc-cli', type: 'com.cloudbees.jenkins.plugins.customtools.CustomTool'
-        env.PATH = "${occli}/bin:${env.PATH}"
-    }
-
-
     // Checkout code
     stage('Checkout') {
         echo 'Pulling Branch: ' + env.BRANCH_NAME
@@ -50,21 +43,29 @@ node('linux'){
     stage('Docker Logout') {
         sh "docker logout"
     }
+    
+    //  Add OC CLI
+    stage('Add OC CLI') {
+        def dir = pwd()
+        sh "cp ~/jenkins/tools/oc-cli/oc ${dir}/"
+        sh "./oc"
+    }
+    
     // OC Login
     stage('OC Login') {
         withCredentials([usernamePassword(credentialsId: 'oc-cli-server-token', usernameVariable: 'SERVER', passwordVariable: 'TOKEN')]) {
-            sh "oc login --token=${SERVER} --server=${TOKEN}"
+            sh "./oc login --token=${TOKEN} --server=${SERVER}"
         }
     }
 
     // OC Import Image
     stage('OC Import Image') { 
-        sh "oc import-image nodejs-ocp-demo"
+        sh "./oc import-image nodejs-ocp-demo"
     }
 
     // OC Logout
     stage('OC Logout') { 
-        sh "oc logout"
+        sh "./oc logout"
     }
 
     // Clean Up (Docker and Workspace)
