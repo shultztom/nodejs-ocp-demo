@@ -37,3 +37,9 @@ Instructions:
 1. `oc project nodejs-ocp-demo`
 2. `oc new-app https://github.com/shultztom/nodejs-ocp-demo.git -l name=nodejs-ocp-demo`
 3. `oc expose svc/nodejs-ocp-demo`
+
+Updating:
+
+You can add a webhook to GitHub. However, since this instance is local, the hook from GitHub won't reach.
+
+Manual Update: `oc start-build nodejs-ocp-demo`
