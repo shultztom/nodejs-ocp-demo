@@ -49,7 +49,7 @@ node('linux'){
     // OC Login
     stage('OC Login') {
         withCredentials([usernamePassword(credentialsId: 'oc-cli-server-token', usernameVariable: 'SERVER', passwordVariable: 'TOKEN')]) {
-            sh "./oc login --token=${TOKEN} --server=${SERVER}"
+            sh "./oc login --token=${TOKEN} --server=${SERVER} -n nodejs-ocp-demo"
         }
     }
 
