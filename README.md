@@ -1,5 +1,7 @@
 # Node.js Example on OCP
 
+## OCP Online
+
 Link: https://nodejs-ocp-demo-nodejs-ocp-demo.apps.us-east-2.starter.openshift-online.com/
 
 Instructions:
@@ -25,3 +27,13 @@ Updating:
 3. Automate the sync process with
 
    `oc import-image nodejs-ocp-demo --scheduled=true`
+
+## OCP Minishift
+
+Link: http://nodejs-ocp-demo-nodejs-ocp-demo.192.168.1.45.nip.io/
+
+Instructions:
+
+1. `oc project nodejs-ocp-demo`
+2. `oc new-app https://github.com/shultztom/nodejs-ocp-demo.git -l name=nodejs-ocp-demo`
+3. `oc expose svc/nodejs-ocp-demo`
