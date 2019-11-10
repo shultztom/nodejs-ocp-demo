@@ -17,8 +17,8 @@ node('linux'){
     }
 
     //  Add OC CLI
-    def oc-cli = tool name: 'oc-cli', type: 'com.cloudbees.jenkins.plugins.customtools.CustomTool'
-    env.PATH = "${oc-cli}/bin:${env.PATH}"
+    def occli = tool name: 'oc-cli', type: 'com.cloudbees.jenkins.plugins.customtools.CustomTool'
+    env.PATH = "${occli}/bin:${env.PATH}"
 
     // Checkout code
     stage('Checkout') {
