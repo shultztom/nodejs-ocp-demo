@@ -38,11 +38,6 @@ node('linux'){
     stage('Push') {
         sh "./dockerScripts/push.sh"
     }
-
-    // Docker Logout
-    stage('Docker Logout') {
-        sh "docker logout"
-    }
     
     //  Add OC CLI
     stage('Add OC CLI') {
@@ -73,6 +68,11 @@ node('linux'){
     // OC Logout
     stage('OC Logout') { 
         sh "./oc logout"
+    }
+
+    // Docker Logout
+    stage('Docker Logout') {
+        sh "docker logout"
     }
 
     // Clean Up (Docker and Workspace)
