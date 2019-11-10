@@ -67,7 +67,7 @@ node('linux'){
 
     // OC Import Image
     stage('OC Import Image') { 
-        sh "./oc import-image nodejs-ocp-demo"
+        sh "./oc import-image nodejs-ocp-demo --confirm"
     }
 
     // OC Logout
