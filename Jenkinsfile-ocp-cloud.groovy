@@ -3,7 +3,7 @@
 node('linux'){
     // Clean Up (Docker and Workspace)
     stage('Clean Up') {
-        sh "docker system prune -a"
+        sh "docker system prune -a -f"
         
         try {
             sh "rm -rf *"
@@ -45,7 +45,7 @@ node('linux'){
 
     // Docker Logout
     stage('Docker Logout') {
-        sh "Docker Logout"
+        sh "docker Logout"
     }
     // OC Login
     stage('OC Login') {
@@ -66,7 +66,7 @@ node('linux'){
 
     // Clean Up (Docker and Workspace)
     stage('Clean Up') {
-        sh "docker system prune -a"
+        sh "docker system prune -a -f"
 
         try {
             sh "rm -rf *"
