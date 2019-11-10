@@ -26,7 +26,7 @@ Updating:
 
    `oc import-image nodejs-ocp-demo`
 
-3. Automate the sync process with
+3. Automate the sync process with (not always instant)
 
    `oc import-image nodejs-ocp-demo --scheduled=true`
 
