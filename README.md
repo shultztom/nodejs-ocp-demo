@@ -4,6 +4,8 @@
 
 Link: https://nodejs-ocp-demo-nodejs-ocp-demo.apps.us-east-2.starter.openshift-online.com/
 
+Uses image stream method
+
 Instructions:
 
 1. Sign up for free Starter Plan [here](https://www.openshift.com/products/pricing/)
@@ -31,6 +33,8 @@ Updating:
 ## OCP Minishift
 
 Link: http://nodejs-ocp-demo-nodejs-ocp-demo.192.168.1.45.nip.io/
+
+Uses oc cli and build method
 
 Instructions:
 
