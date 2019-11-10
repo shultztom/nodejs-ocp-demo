@@ -11,7 +11,7 @@ node('linux'){
     // OC Login
     stage('OC Login') {
         withCredentials([usernamePassword(credentialsId: 'oc-cli-mini', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
-            sh "./oc login https://192.168.1.45:8443 -u ${USER}:${PASS} -n nodejs-ocp-demo"
+            sh "./oc login https://192.168.1.45:8443 -u ${USER}:${PASS} -n nodejs-ocp-demo --insecure-skip-tls-verify"
         }
     }
 
